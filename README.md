@@ -46,10 +46,12 @@ to learn how to write scripts in FD.js.
 		script: function (space) { 
 			...
 		},
-		ordering: function (space, best_solution) { // Only for branch and bound
+		// Only for branch and bound
+		ordering: function (space, best_solution) { 
 			...
 		},
-		solve_for: FD.search.solve_for_variables(...) // Optional
+		// Optional
+		solve_for: FD.search.solve_for_variables(...) 
 	};
 ````
 
@@ -76,6 +78,16 @@ To explore the the search tree, you can use either the context menu (by right cl
 ![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/subtrees.jpg "Collapsed subtrees in the search tree")
 
 **Figure 2:** Collapsed subtrees in the search tree
+
+DEMO
+---------------------
++ Simple problem: 5A + 3B = C, A,B distinct and C = [0..20]. Split ditribute strategy + FD.ExploreOne invocation. [Demo 1](demo/simple.html)
++ [Sudoku problem](http://hagaregn.org.uk/npsudoku/sudoku.html). First fail ditribute strategy + FD.ExploreAll invocation. [Demo 2](demo/sudoku.html)
++ [Aligning for a photo problem](http://www.mozart-oz.org/documentation/fdt/node44.html#section.bab.align). First fail ditribute strategy + 
+FD.ExploreBest invocation. [Demo 3](demo/photo.html)
++ [N-queen problem](http://www.mozart-oz.org/documentation/fdt/node25.html#section.scripts.queens). n = 8 + naive ditribute strategy + FD.ExploreOne invocation. 
+[Demo 4](demo/n-queen.html)
+
 
 Authors
 ---------------------
