@@ -81,10 +81,10 @@ To explore the the search tree, you can use either the context menu (by right cl
 
 Authors
 ---------------------
-### Authors:
+### Authors
 + [Minh Tu Le](https://github.com/minhtule) (<minhtule0412@gmail.com>)
 + [Shubham Goyal](https://github.com/shubhamgoyal) (<shubhamjigoyal@gmail.com>)
 
-### Supervisors:
+### Supervisors
 + Assoc. Prof. Martin Henz (National University of Singapore)
 + Mr. Srikumar K. S. (National University of Sinagpore)
