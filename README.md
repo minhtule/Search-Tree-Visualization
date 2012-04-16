@@ -41,7 +41,7 @@ Explanation
 - *problem* : An object describes the FD constraint problem to be solved. Refer to [FD.js API](http://nishabdam.com:8080/fd/wiki?name=API)
 to learn how to write scripts in FD.js.
 
-````javascript
+````
 	var problem = {
 		script: function (space) { 
 			...
@@ -78,17 +78,6 @@ To explore the the search tree, you can use either the context menu (by right cl
 ![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/subtrees.jpg "Collapsed subtrees in the search tree")
 
 **Figure 2:** Collapsed subtrees in the search tree
-
-DEMO
----------------------
-+ Simple problem: 5A + 3B = C, A,B distinct and C = [0..20]. Split ditribute strategy + FD.ExploreOne invocation. 
-[Demo 1](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/demo/simple.html)
-+ [Sudoku problem](http://hagaregn.org.uk/npsudoku/sudoku.html). First fail ditribute strategy + FD.ExploreAll invocation. [Demo 2](demo/sudoku.html)
-+ [Aligning for a photo problem](http://www.mozart-oz.org/documentation/fdt/node44.html#section.bab.align). First fail ditribute strategy + 
-FD.ExploreBest invocation. [Demo 3](demo/photo.html)
-+ [N-queen problem](http://www.mozart-oz.org/documentation/fdt/node25.html#section.scripts.queens). n = 8 + naive ditribute strategy + FD.ExploreOne invocation. 
-[Demo 4](demo/n-queen.html)
-
 
 Authors
 ---------------------
