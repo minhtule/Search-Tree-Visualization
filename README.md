@@ -68,12 +68,12 @@ To explore the the search tree, you can use either the context menu (by right cl
 
 ### The Search Tree
 
-![](https://github.com/minhtule/Search-Tree-Visualization-for-Finite-Domain-Constraint-Problems/raw/gh-pages/nodes.jpg "Nodes in the search tree")
+![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/nodes.jpg "Nodes in the search tree")
 
 **Figure 1:** Nodes in the search tree
 
 
-![](https://github.com/minhtule/Search-Tree-Visualization-for-Finite-Domain-Constraint-Problems/raw/gh-pages/subtrees.jpg "Collapsed subtrees in the search tree")
+![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/subtrees.jpg "Collapsed subtrees in the search tree")
 
 **Figure 2:** Collapsed subtrees in the search tree
 
