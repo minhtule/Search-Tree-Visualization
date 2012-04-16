@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Search Tree Visualization by minhtule</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/minhtule/Search-Tree-Visualization">Fork Me on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Search Tree Visualization</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/minhtule/Search-Tree-Visualization/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/minhtule/Search-Tree-Visualization/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+      <span class="banner-fix"></span>
+
+      <section id="main_content">
+        <h1>Search Tree Visualization for Finite Domain Constraint Problems</h1>
+
+<p>Explorer.js is a plug-in library to the <a href="http://nishabdam.com:8080/fd/index">FD.js</a> library 
+written by Mr. Srikumar. Explorer.js allows users to follow the search process
+graphically and step by step. </p>
+
+<p>As FD.js is designed based on the Finite Domain Constraint Programming 
+feature of <a href="http://www.mozart-oz.org/documentation/fdt/index.html">Mozart/Oz</a>,
+Explorer.js is also designed based on the <a href="http://www.mozart-oz.org/documentation/explorer/index.html">Oz Explorer</a>. </p>
+
+<h2>Dependencies</h2>
+
+<p>All of these libraries need to be loaded prior to Explorer.js for full 
+functionality.</p>
+
+<ul>
+<li>
+<a href="http://nishabdam.com:8080/fd/index">FD.js</a> (Finite Domain Constraint main engine)</li>
+<li>
+<a href="http://www.kineticjs.com/">Kinetic.js</a> (Drawing and interaction on HTML5 Canvas)</li>
+<li>jQuery.js (Needed for below libraries and Explorer's hotkey functionality)</li>
+<li>jQuery.ui.position.js (Needed to nicely position the context menu but can be
+ignored. Refer <a href="https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md">jQuery.contextMenu.js</a>)
+for more detailed.)</li>
+<li>
+<a href="https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md">jQuery.contextMenu.js</a>
+(Creating the context menu in the Explorer)</li>
+</ul><h2>User Guide</h2>
+
+<h3>Invoke the Explorer</h3>
+
+<p>Explorer.js provides 4 methods to invoke the Explorer (as part of FD). The first 3 use depth first search engine
+while the last one uses branch and bound search engine.</p>
+
+<ul>
+<li>
+<strong>FD.Explore</strong> (<em>problem</em>, <em>container</em>) : Initialize the explorer and display the orignal space</li>
+<li>
+<strong>FD.ExploreOne</strong> (<em>problem</em>, <em>container</em>) : Initialize the explorer and display the search tree until the first 
+solution is found</li>
+<li>
+<strong>FD.ExploreAll</strong> (<em>problem</em>, <em>container</em>) : Initialize the explorer and display the entire search tree</li>
+<li>
+<strong>FD.ExploreBest</strong> (<em>problem</em>, <em>container</em>) : Initialize the explore and display the entire search tree (using 
+branch and bound search)</li>
+</ul><p>Explanation</p>
+
+<ul>
+<li>
+<em>problem</em> : An object describes the FD constraint problem to be solved. Refer to <a href="http://nishabdam.com:8080/fd/wiki?name=API">FD.js API</a>
+to learn how to write scripts in FD.js.</li>
+</ul><div class="highlight">
+<pre>    <span class="kd">var</span> <span class="nx">problem</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">script</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">space</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="p">...</span>
+        <span class="p">},</span>
+        <span class="nx">ordering</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">space</span><span class="p">,</span> <span class="nx">best_solution</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Only for branch and bound</span>
+            <span class="p">...</span>
+        <span class="p">},</span>
+        <span class="nx">solve_for</span><span class="o">:</span> <span class="nx">FD</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">solve_for_variables</span><span class="p">(...)</span> <span class="c1">// Optional</span>
+    <span class="p">};</span>
+</pre>
+</div>
+
+
+<ul>
+<li>
+<em>container</em> : HTML div id of the div tag where the canvases (Kinetic.js creates 
+many layers of canvas!) reside</li>
+</ul><h3>Context Menu &amp; Hotkeys</h3>
+
+<p>To explore the the search tree, you can use either the context menu (by right click) or the hotkeys.</p>
+
+<ul>
+<li>Display space (<strong>d</strong>) - Display the space's varibles and their domains</li>
+<li>Collapse (<strong>space</strong>) - Collapse a node</li>
+<li>Expand (<strong>space</strong>) - Expand a node</li>
+<li>Explore Next (<strong>n</strong>) - Explore the next space</li>
+<li>Explore One (<strong>o</strong>) - Explore the subtree until the next solution is found</li>
+<li>Explore All (<strong>a</strong>) - Explore the entire subtree</li>
+</ul><h3>The Search Tree</h3>
+
+<p><img src="https://github.com/minhtule/Search-Tree-Visualization/raw/master/nodes.jpg" alt="" title="Nodes in the search tree"></p>
+
+<p><strong>Figure 1:</strong> Nodes in the search tree</p>
+
+<p><img src="https://github.com/minhtule/Search-Tree-Visualization/raw/master/subtrees.jpg" alt="" title="Collapsed subtrees in the search tree"></p>
+
+<p><strong>Figure 2:</strong> Collapsed subtrees in the search tree</p>
+
+<h2>Versions</h2>
+
+<h3>0.4</h3>
+
+<ul>
+<li>First release!</li>
+</ul><h2>Authors</h2>
+
+<h3>Authors</h3>
+
+<ul>
+<li>
+<a href="https://github.com/minhtule">Minh Tu Le</a> (<a href="mailto:minhtule0412@gmail.com">minhtule0412@gmail.com</a>)</li>
+<li>
+<a href="https://github.com/shubhamgoyal">Shubham Goyal</a> (<a href="mailto:shubhamjigoyal@gmail.com">shubhamjigoyal@gmail.com</a>)</li>
+</ul><h3>Supervisors</h3>
+
+<ul>
+<li>Assoc. Prof. Martin Henz (National University of Singapore)</li>
+<li>Mr. Srikumar K. S. (National University of Sinagpore)</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/minhtule">minhtule</a> can be found on <a href="https://github.com/minhtule/Search-Tree-Visualization">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
