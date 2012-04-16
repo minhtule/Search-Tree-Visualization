@@ -46,10 +46,12 @@ to learn how to write scripts in FD.js.
 		script: function (space) { 
 			...
 		},
-		ordering: function (space, best_solution) { // Only for branch and bound
+		// Only for branch and bound
+		ordering: function (space, best_solution) { 
 			...
 		},
-		solve_for: FD.search.solve_for_variables(...) // Optional
+		// Optional
+		solve_for: FD.search.solve_for_variables(...) 
 	};
 ````
 
