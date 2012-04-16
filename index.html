@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Search Tree Visualization for Finite Domain Constraint Problems : " />
 
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Search Tree Visualization by minhtule</title>
+    <title>Search Tree Visualization for Finite Domain Constraint Problems</title>
   </head>
 
   <body>
-    <a id="forkme_banner" href="https://github.com/minhtule/Search-Tree-Visualization">Fork Me on GitHub</a>
-    <div class="shell">
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Search Tree Visualization</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/minhtule/Search-Tree-Visualization">Fork Me on GitHub</a>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/minhtule/Search-Tree-Visualization/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/minhtule/Search-Tree-Visualization/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+          <h1 id="project_title">Search Tree Visualization for Finite Domain Constraint Problems</h1>
+          <h2 id="project_tagline"></h2>
 
-      <span class="banner-fix"></span>
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/minhtule/Search-Tree-Visualization/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/minhtule/Search-Tree-Visualization/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
 
-      <section id="main_content">
-        <h1>Search Tree Visualization for Finite Domain Constraint Problems</h1>
-
-<p>Explorer.js is a plug-in library to the <a href="http://nishabdam.com:8080/fd/index">FD.js</a> library 
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Explorer.js is a plug-in library to the <a href="http://nishabdam.com:8080/fd/index">FD.js</a> library 
 written by Mr. Srikumar. Explorer.js allows users to follow the search process
 graphically and step by step. </p>
 
@@ -55,7 +39,7 @@ feature of <a href="http://www.mozart-oz.org/documentation/fdt/index.html">Mozar
 Explorer.js is also designed based on the <a href="http://www.mozart-oz.org/documentation/explorer/index.html">Oz Explorer</a>. </p>
 
 <h2>Dependencies</h2>
-
+<hr>
 <p>All of these libraries need to be loaded prior to Explorer.js for full 
 functionality.</p>
 
@@ -72,7 +56,7 @@ for more detailed.)</li>
 <a href="https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md">jQuery.contextMenu.js</a>
 (Creating the context menu in the Explorer)</li>
 </ul><h2>User Guide</h2>
-
+<hr>
 <h3>Invoke the Explorer</h3>
 
 <p>Explorer.js provides 4 methods to invoke the Explorer (as part of FD). The first 3 use depth first search engine
@@ -115,7 +99,7 @@ to learn how to write scripts in FD.js.</li>
 <li>
 <em>container</em> : HTML div id of the div tag where the canvases (Kinetic.js creates 
 many layers of canvas!) reside</li>
-</ul><h3>Context Menu &amp; Hotkeys</h3>
+</ul><hr><h3>Context Menu &amp; Hotkeys</h3>
 
 <p>To explore the the search tree, you can use either the context menu (by right click) or the hotkeys.</p>
 
@@ -126,8 +110,7 @@ many layers of canvas!) reside</li>
 <li>Explore Next (<strong>n</strong>) - Explore the next space</li>
 <li>Explore One (<strong>o</strong>) - Explore the subtree until the next solution is found</li>
 <li>Explore All (<strong>a</strong>) - Explore the entire subtree</li>
-</ul><h3>The Search Tree</h3>
-
+</ul><hr><h3>The Search Tree</h3>
 
 <p><img src="https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/nodes.jpg" alt="" title="Nodes in the search tree"></p>
 
@@ -138,6 +121,7 @@ many layers of canvas!) reside</li>
 <p><strong>Figure 2:</strong> Collapsed subtrees in the search tree</p>
 
 <h2>Demos</h2>
+<hr>
 <ul>
   <li>Simple problem: 5A + 3B = C, A,B distinct and C = [0..20]. Split ditribute strategy + FD.ExploreOne invocation. <a href="demo/simple.html"/>Demo 1</a></li>
   <li><a href="http://hagaregn.org.uk/npsudoku/sudoku.html">Sudoku problem</a>. First fail ditribute strategy + FD.ExploreAll invocation. <a href="demo/sudoku.html"/>Demo 2</a></li>
@@ -145,17 +129,11 @@ many layers of canvas!) reside</li>
   <li><a href="http://www.mozart-oz.org/documentation/fdt/node25.html#section.scripts.queens">N-queen problem</a>. n = 8 + naive ditribute strategy + FD.ExploreOne invocation. <a href="demo/n-queen.html"/>Demo 4</a></li>
 </ul>
 
-<h2>Versions</h2>
-
-<h3>0.4</h3>
-
-<ul>
-<li>First release!</li>
-</ul>
 
 <h2>Authors</h2>
-
+<hr>
 <h3>Authors</h3>
+
 <ul>
 <li>
 <a href="https://github.com/minhtule">Minh Tu Le</a> (<a href="mailto:minhtule0412@gmail.com">minhtule0412@gmail.com</a>)</li>
@@ -167,21 +145,14 @@ many layers of canvas!) reside</li>
 <li>Mr. Srikumar K. S. (National University of Sinagpore)</li>
 </ul>
       </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/minhtule">minhtule</a> can be found on <a href="https://github.com/minhtule/Search-Tree-Visualization">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
     </div>
 
-    
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Search Tree Visualization for Finite Domain Constraint Problems maintained by <a href="https://github.com/minhtule">minhtule</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
   </body>
 </html>
