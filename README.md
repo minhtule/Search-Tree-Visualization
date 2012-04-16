@@ -81,7 +81,8 @@ To explore the the search tree, you can use either the context menu (by right cl
 
 DEMO
 ---------------------
-+ Simple problem: 5A + 3B = C, A,B distinct and C = [0..20]. Split ditribute strategy + FD.ExploreOne invocation. [Demo 1](demo/simple.html)
++ Simple problem: 5A + 3B = C, A,B distinct and C = [0..20]. Split ditribute strategy + FD.ExploreOne invocation. 
+[Demo 1](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/demo/simple.html)
 + [Sudoku problem](http://hagaregn.org.uk/npsudoku/sudoku.html). First fail ditribute strategy + FD.ExploreAll invocation. [Demo 2](demo/sudoku.html)
 + [Aligning for a photo problem](http://www.mozart-oz.org/documentation/fdt/node44.html#section.bab.align). First fail ditribute strategy + 
 FD.ExploreBest invocation. [Demo 3](demo/photo.html)
