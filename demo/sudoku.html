@@ -1,0 +1,118 @@
+<!--
+// Copyright (c) 2011, Srikumar K. S. (srikumarks@gmail.com)
+// All rights reserved.
+-->
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>FD Explorer</title>
+	<link href="../src/jquery.contextMenu.css" rel="stylesheet" type="text/css" />
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container"></div>
+	
+	<script src="../src/kinetic-v3.9.2.min.js"></script>
+	<script src="../src/jquery-1.7.2.min.js"></script>
+	<script src="../src/fd.js"></script>
+	<script src="../src/jquery.contextMenu.js"></script>
+	<script src="../src/jquery.ui.position.js"></script>
+	<script src="../src/explorer.js"></script>
+	<script>
+		// A simple script for solving sudoku puzzles.
+		// 'board' is an object whose keys are sudoku
+		// cell references of the form <letter><digit>
+		// where <letter> gives the row letter from
+		// ABCDEFGHI and <digit> gives column from
+		// 123456789. The solution of the space will be 
+		// an object with a key for each cell.
+		function sudoku(board) {
+			return function (S) {
+				var rows = ['A','B','C','D','E','F','G','H','I'];
+				var cols = ['1','2','3','4','5','6','7','8','9'];
+				var root = [];
+				var i, j, k, i2, j2;
+
+				// Declare board places.
+				for (i = 0; i < 9; ++i) {
+					for (j = 0; j < 9; ++j) {
+						root.push(rows[i] + cols[j]);
+					}
+				}
+
+				S.decl(root, [[1,9]]);
+
+				// Add row constraints.
+				for (i = 0; i < 9; ++i) {
+					k = [];
+					for (j = 0; j < 9; ++j) {
+						k.push(rows[i] + cols[j]);
+					}
+					S.distinct(k);
+				}
+
+				// Add column constraints
+				for (i = 0; i < 9; ++i) {
+					k = [];
+					for (j = 0; j < 9; ++j) {
+						k.push(rows[j] + cols[i]);
+					}
+					S.distinct(k);
+				}
+
+				// Add box constraints.
+				for (i = 0; i < 3; ++i) {
+					for (j = 0; j < 3; ++j) {
+						k = [];
+						for (i2 = 0; i2 < 3; ++i2) {
+							for (j2 = 0; j2 < 3; ++j2) {
+								k.push(rows[i * 3 + i2] + cols[j * 3 + j2]);
+							}
+						}
+						S.distinct(k);
+					}
+				}
+
+				// Initialize the board.
+				for (i in board) {
+					S.num(i, board[i]);
+				}
+
+				// Distribution strategy is fail first, since that is
+				// likely to cause maximum propagation for this puzzle.
+				FD.distribute.fail_first(S, root);
+				return S;
+			};
+		}
+
+		var problem = {   
+				name: 'test_fiendishly_hard_sudoku',
+		        script: function (S) {
+		            return sudoku({
+		                A1:7,
+		                B2:3, B4:5,
+		                C5:4, C7:2,
+		                D4:3, D8:7,
+		                E1:2, E7:6,
+		                F2:5, F4:1, F6:8,
+		                G5:7,
+		                H1:6, H5:2,
+		                I8:3, I9:1
+		            })(S);
+		        }
+		    };
+
+		FD.ExploreAll(problem, "container");
+	</script>
+</body>
+
+</html>

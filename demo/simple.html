@@ -1,0 +1,48 @@
+<!--
+// Copyright (c) 2011, Srikumar K. S. (srikumarks@gmail.com)
+// All rights reserved.
+-->
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>FD Explorer</title>
+	<link href="../src/jquery.contextMenu.css" rel="stylesheet" type="text/css" />
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container"></div>
+	
+	<script src="../src/kinetic-v3.9.2.min.js"></script>
+	<script src="../src/jquery-1.7.2.min.js"></script>
+	<script src="../src/fd.js"></script>
+	<script src="../src/jquery.contextMenu.js"></script>
+	<script src="../src/jquery.ui.position.js"></script>
+	<script src="../src/explorer.js"></script>
+	<script>
+		var problem = {   
+		        name: 'test_wsum',
+		        description: "Simple test of wsum with fail_first distribution",
+		        script: function (S) {
+		            S.decl(['A','B','C']);
+		            S.wsum([5,3], ['A','B'], 'C');
+		            S.distinct(['A','B']);
+		            S.vars.C.set_dom([[0,20]]);
+		            FD.distribute.split(S, ['A','B','C']);
+		            return S;
+		        }
+		    };
+
+		FD.Explore(problem, "container");
+	</script>
+</body>
+
+</html>
