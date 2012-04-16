@@ -58,6 +58,7 @@ to learn how to write scripts in FD.js.
 - *container* : HTML div id of the div tag where the canvases (Kinetic.js creates 
 many layers of canvas!) reside
 
+---------------------
 ### Context Menu & Hotkeys
 To explore the the search tree, you can use either the context menu (by right click) or the hotkeys.
 
@@ -68,6 +69,7 @@ To explore the the search tree, you can use either the context menu (by right cl
 + Explore One (**o**) - Explore the subtree until the next solution is found
 + Explore All (**a**) - Explore the entire subtree
 
+---------------------
 ### The Search Tree
 
 ![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/nodes.jpg "Nodes in the search tree")
