@@ -1,0 +1,81 @@
+<!--
+// Copyright (c) 2011, Srikumar K. S. (srikumarks@gmail.com)
+// All rights reserved.
+-->
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>FD Explorer</title>
+	<link href="../src/jquery.contextMenu.css" rel="stylesheet" type="text/css" />
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container"></div>
+	
+	<script src="../src/kinetic-v3.9.2.min.js"></script>
+	<script src="../src/jquery-1.7.2.min.js"></script>
+	<script src="../src/fd.js"></script>
+	<script src="../src/jquery.contextMenu.js"></script>
+	<script src="../src/jquery.ui.position.js"></script>
+	<script src="../src/explorer.js"></script>
+	<script>
+		function test_mozart_photo_bab(dist_strategy) {
+		    return {   
+		        name: 'test_mozart_photo_bab+'+dist_strategy,
+		        script: function (S) {
+		            var one = S.const(1);
+		            var zero = S.const(0);
+
+		            function satisfied(p) {
+		                var a = S.reified('eq', [S.plus(p[0], one), p[1]]);
+		                var b = S.reified('eq', [S.plus(p[1], one), p[0]]);
+		                return S.plus(a, b);                
+		            }
+
+		            var persons = ['Betty', 'Chris', 'Donald', 'Fred', 'Gary', 'Mary', 'Paul'];
+		            var preferences = [
+		                ['Betty', 'Gary'],
+		                ['Betty', 'Mary'],
+		                ['Chris', 'Betty'],
+		                ['Chris', 'Gary'],
+		                ['Fred', 'Mary'],
+		                ['Fred', 'Donald'],
+		                ['Paul', 'Fred'],
+		                ['Paul', 'Donald']
+		                    ];
+
+		            S.decl(persons, [[1, persons.length]]);
+		            S.decl('Satisfaction');
+
+		            S.distinct(persons);
+		            S.sum(preferences.map(satisfied), 'Satisfaction');
+		            S.lt('Fred', 'Betty');
+
+		            FD.distribute[dist_strategy](S, persons);
+		            return S;
+		        },
+		        ordering: function ordering(S, solution) {
+		            S.gt('Satisfaction', S.const(solution.Satisfaction));
+		        },
+		        solve_for: FD.search.solve_for_variables([
+		            'Betty', 'Chris', 'Donald', 'Fred', 'Gary', 'Mary', 'Paul'
+		        ])
+		    };
+		}
+
+		var problem = test_mozart_photo_bab('fail_first');
+
+		FD.ExploreBest(problem, "container");
+	</script>
+</body>
+
+</html>
