@@ -46,18 +46,17 @@ to learn how to write scripts in FD.js.
 		script: function (space) { 
 			...
 		},
-		// Only for branch and bound
-		ordering: function (space, best_solution) { 
+		ordering: function (space, best_solution) { // Only for branch and bound
 			...
 		},
-		// Optional
-		solve_for: FD.search.solve_for_variables(...) 
+		solve_for: FD.search.solve_for_variables(...) // Optional
 	};
 ````
 
 - *container* : HTML div id of the div tag where the canvases (Kinetic.js creates 
 many layers of canvas!) reside
 
+---------------------
 ### Context Menu & Hotkeys
 To explore the the search tree, you can use either the context menu (by right click) or the hotkeys.
 
@@ -68,16 +67,23 @@ To explore the the search tree, you can use either the context menu (by right cl
 + Explore One (**o**) - Explore the subtree until the next solution is found
 + Explore All (**a**) - Explore the entire subtree
 
+---------------------
 ### The Search Tree
 
-![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/nodes.jpg "Nodes in the search tree")
+![](https://github.com/minhtule/Search-Tree-Visualization/raw/master/nodes.jpg "Nodes in the search tree")
 
-**Figure 1:** Nodes in the search tree
+*Figure 1:* Nodes in the search tree
 
 
-![](https://github.com/minhtule/Search-Tree-Visualization/raw/gh-pages/subtrees.jpg "Collapsed subtrees in the search tree")
+![](https://github.com/minhtule/Search-Tree-Visualization/raw/master/subtrees.jpg "Collapsed subtrees in the search tree")
 
-**Figure 2:** Collapsed subtrees in the search tree
+*Figure 2:* Collapsed subtrees in the search tree
+
+
+Versions
+---------------------
+### 0.4
++ First release!
 
 Authors
 ---------------------
