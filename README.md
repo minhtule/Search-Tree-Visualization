@@ -41,7 +41,7 @@ Explanation
 - *problem* : An object describes the FD constraint problem to be solved. Refer to [FD.js API](http://nishabdam.com:8080/fd/wiki?name=API)
 to learn how to write scripts in FD.js.
 
-````
+````javascript
 	var problem = {
 		script: function (space) { 
 			...
