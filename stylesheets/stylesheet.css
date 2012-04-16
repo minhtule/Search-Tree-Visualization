@@ -146,7 +146,7 @@ strong {
 img {
   position: relative;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 739px;
   padding: 5px;
   margin: 10px 0 10px 0;
   border: 1px solid #ebebeb;
@@ -255,11 +255,6 @@ td {
 form {
   background: #f2f2f2;
   padding: 20px;
-}
-
-img {
-  width: 100%;
-  max-width: 100%;
 }
 
 /*******************************************************************************
