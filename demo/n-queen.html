@@ -19,7 +19,8 @@
 </head>
 
 <body>
-	<div id="container"></div>
+	<div id="container1"></div>
+	<div id="container2"></div>
 	
 	<script src="../src/kinetic-v3.9.2.min.js"></script>
 	<script src="../src/jquery-1.7.2.min.js"></script>
@@ -28,7 +29,7 @@
 	<script src="../src/jquery.ui.position.js"></script>
 	<script src="../src/explorer.js"></script>
 	<script>
-		function test_n_queens(N, max_solutions) {
+		function test_n_queens(N, distribute) {
 			return  {   
 				name: 'test_'+N+'_queens',
 				script: function (S) {
@@ -49,19 +50,16 @@
 						}
 					}
 
-					//FD.distribute.fail_first(S, root);
-					//FD.distribute.naive(S, root);
-					FD.distribute.split(S, root);
-					//FD.distribute.generic(S, root, { filter: 'undet',
-					//								 ordering: 'size',
-					//								 value: 'mid'});
+					FD.distribute[distribute](S, root);
 					return S;
 				}
 			};
 		}
 
-		var problem = test_n_queens(8);
-		FD.ExploreOne(problem, "container");
+		var problem1 = test_n_queens(8, "naive"),
+			problem2 = test_n_queens(8, "fail-first");
+		FD.ExploreOne(problem1, "container1");
+		FD.ExploreOne(problem2, "container2");
 	</script>
 </body>
 
