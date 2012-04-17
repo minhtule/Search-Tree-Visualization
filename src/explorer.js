@@ -485,7 +485,7 @@ function explore_best(selected_node) {
 // 0: Only the root space is displayed
 // 1: Display the tree up to the first found solution
 // 2: Display the entire tree with all the solutions
-function initializing(root_space, conn, type) {
+function initializing(root_space, container, type) {
 	
 	var default_circle_radius = 10,
 		default_square_side = 20,
@@ -519,7 +519,7 @@ function initializing(root_space, conn, type) {
 		selected_node = {},
 		is_collapsing_no_sol_nodes = true,
 		stage = new Kinetic.Stage({
-			container: conn, 
+			container: container, 
 			width: default_canvas_width, 
 			height: default_canvas_height
 		}),
@@ -1140,7 +1140,7 @@ function initializing(root_space, conn, type) {
 
 	$(function (){
 		$.contextMenu({
-			selector: '#container', 
+			selector: '#' + container, 
 			callback: function(key, options) {
 			},
 			items: {
@@ -1367,37 +1367,37 @@ function initializing(root_space, conn, type) {
 	}
 };
 
-FD.Explore = function(problem, conn) {
+FD.Explore = function(problem, container) {
 	if (problem.solve_for)
 		is_solved = problem.solve_for;
 	else
 		is_solved = FD.search.solve_for_variables();
-	initializing(problem.script(new FD.space()), conn, 0);
+	initializing(problem.script(new FD.space()), container, 0);
 };
 
-FD.ExploreOne = function(problem, conn) {
+FD.ExploreOne = function(problem, container) {
 	if (problem.solve_for)
 		is_solved = problem.solve_for;
 	else
 		is_solved = FD.search.solve_for_variables();
-	initializing(problem.script(new FD.space()), conn, 1);
+	initializing(problem.script(new FD.space()), container, 1);
 };
 
-FD.ExploreAll = function(problem, conn) {
+FD.ExploreAll = function(problem, container) {
 	if (problem.solve_for)
 		is_solved = problem.solve_for;
 	else
 		is_solved = FD.search.solve_for_variables();
-	initializing(problem.script(new FD.space()), conn, 2);
+	initializing(problem.script(new FD.space()), container, 2);
 };
 
-FD.ExploreBest = function(problem, conn) {
+FD.ExploreBest = function(problem, container) {
 	if (problem.solve_for)
 		is_solved = problem.solve_for;
 	else
 		is_solved = FD.search.solve_for_variables();
 	ordering = problem.ordering;
-	initializing(problem.script(new FD.space()), conn, 3);
+	initializing(problem.script(new FD.space()), container, 3);
 };
 
 })();
