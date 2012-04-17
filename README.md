@@ -1,6 +1,7 @@
 Search Tree Visualization for Finite Domain Constraint Problems
 ====================
 
+
 Explorer.js is a plug-in library to the [FD.js](http://nishabdam.com:8080/fd/index) library 
 written by Mr. Srikumar. Explorer.js allows users to follow the search process
 graphically and step by step. 
@@ -9,8 +10,10 @@ As FD.js is designed based on the Finite Domain Constraint Programming
 feature of [Mozart/Oz](http://www.mozart-oz.org/documentation/fdt/index.html),
 Explorer.js is also designed based on the [Oz Explorer](http://www.mozart-oz.org/documentation/explorer/index.html). 
 
+
 Dependencies
 ---------------------
+
 All of these libraries need to be loaded prior to Explorer.js for full 
 functionality.
 
@@ -23,8 +26,10 @@ for more detailed.)
 + [jQuery.contextMenu.js] (https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md)
 (Creating the context menu in the Explorer)
 
+
 User Guide
 ---------------------
+
 ### Invoke the Explorer
 Explorer.js provides 4 methods to invoke the Explorer (as part of FD). The first 3 use depth first search engine
 while the last one uses branch and bound search engine.
@@ -84,6 +89,14 @@ Versions
 ---------------------
 ### 0.4
 + First release!
+
+
+Acknowledgement
+---------------------
+The tree drawing algorithm used in Explorer.js is based on the [Tidier Drawings of Trees]
+(http://emr.cs.iit.edu/~reingold/tidier-drawings.pdf) paper by 
+Edward M. Reingold and John S. Tilford.
+
 
 Authors
 ---------------------
