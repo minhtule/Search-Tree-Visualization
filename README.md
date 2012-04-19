@@ -26,7 +26,7 @@ for more detailed.)
 + [jQuery.contextMenu.js] (https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md)
 (Creating the context menu in the Explorer)
 
-This library was developed and tested only in Chrome
+This library was developed and tested only in Chrome.
 
 User Guide
 ---------------------
