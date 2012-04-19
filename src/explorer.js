@@ -1,6 +1,7 @@
 /**
  * Search Tree Visualization for Finite Domain Constraint Problems
- * Copyright (C) 2012 by LE MINH TU (minhtule0412@gmail.com) & SHUBHAM GOYAL (shubhamjigoyal@gmail.com)
+ * http://minhtule.github.com/Search-Tree-Visualization/
+ * Copyright (C) 2012 by MINH TU LE (minhtule0412@gmail.com) & SHUBHAM GOYAL (shubhamjigoyal@gmail.com)
  * Version: 0.4
  * Licensed under the MIT or GPL Version 3 licenses.
  * 

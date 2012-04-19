@@ -11,7 +11,7 @@ feature of [Mozart/Oz](http://www.mozart-oz.org/documentation/fdt/index.html),
 Explorer.js is also designed based on the [Oz Explorer](http://www.mozart-oz.org/documentation/explorer/index.html). 
 
 
-Dependencies
+Dependencies & Compatibility
 ---------------------
 
 All of these libraries need to be loaded prior to Explorer.js for full 
@@ -26,6 +26,7 @@ for more detailed.)
 + [jQuery.contextMenu.js] (https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md)
 (Creating the context menu in the Explorer)
 
+This library was developed and tested only in Chrome.
 
 User Guide
 ---------------------
@@ -51,10 +52,12 @@ to learn how to write scripts in FD.js.
 		script: function (space) { 
 			...
 		},
-		ordering: function (space, best_solution) { // Only for branch and bound
+		// Only for branch and bound
+		ordering: function (space, best_solution) { 
 			...
 		},
-		solve_for: FD.search.solve_for_variables(...) // Optional
+		// Optional
+		solve_for: FD.search.solve_for_variables(...) 
 	};
 ````
 
@@ -90,6 +93,11 @@ Versions
 ### 0.4
 + First release!
 
+
+License
+---------------------
+Explorer.js is published under the [MIT license](http://www.opensource.org/licenses/mit-license)
+or [GPL v3](http://opensource.org/licenses/GPL-3.0)
 
 Acknowledgement
 ---------------------

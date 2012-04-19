@@ -1,6 +1,9 @@
 <!--
-// Copyright (c) 2011, Srikumar K. S. (srikumarks@gmail.com)
-// All rights reserved.
+// Original Author: Srikumar K. S. (srikumarks@gmail.com)
+// Distributed originally under license: BSD (http://www.opensource.org/licenses/bsd-license.php)
+//
+// Modified & edited by Minh Tu Le (minhtule0412@gmail.com)
+// Redistributed under the MIT or GPL Version 3 licenses.
 -->
 
 <!DOCTYPE HTML>
@@ -19,7 +22,8 @@
 </head>
 
 <body>
-	<div id="container"></div>
+	<div id="container1" style="position: relative; width: 1300px; height: 500px; border: solid 1px; overflow: auto"></div>
+	<div id="container2" style="position: relative; width: 1300px; height: 500px; border: solid 1px; overflow: auto"></div>
 	
 	<script src="../src/kinetic-v3.9.2.min.js"></script>
 	<script src="../src/jquery-1.7.2.min.js"></script>
@@ -28,7 +32,7 @@
 	<script src="../src/jquery.ui.position.js"></script>
 	<script src="../src/explorer.js"></script>
 	<script>
-		function test_n_queens(N, max_solutions) {
+		function test_n_queens(N, distribute) {
 			return  {   
 				name: 'test_'+N+'_queens',
 				script: function (S) {
@@ -49,19 +53,16 @@
 						}
 					}
 
-					//FD.distribute.fail_first(S, root);
-					//FD.distribute.naive(S, root);
-					FD.distribute.split(S, root);
-					//FD.distribute.generic(S, root, { filter: 'undet',
-					//								 ordering: 'size',
-					//								 value: 'mid'});
+					FD.distribute[distribute](S, root);
 					return S;
 				}
 			};
 		}
 
-		var problem = test_n_queens(8);
-		FD.ExploreOne(problem, "container");
+		var problem1 = test_n_queens(8, "naive"),
+			problem2 = test_n_queens(8, "fail_first");
+		FD.ExploreOne(problem1, "container1");
+		FD.ExploreOne(problem2, "container2");
 	</script>
 </body>
 
