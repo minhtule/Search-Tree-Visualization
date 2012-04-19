@@ -11,7 +11,7 @@ feature of [Mozart/Oz](http://www.mozart-oz.org/documentation/fdt/index.html),
 Explorer.js is also designed based on the [Oz Explorer](http://www.mozart-oz.org/documentation/explorer/index.html). 
 
 
-Dependencies
+Dependencies & Compatibility
 ---------------------
 
 All of these libraries need to be loaded prior to Explorer.js for full 
@@ -26,6 +26,7 @@ for more detailed.)
 + [jQuery.contextMenu.js] (https://github.com/medialize/jQuery-contextMenu/blob/gh-pages/README.md)
 (Creating the context menu in the Explorer)
 
+This library is developed and tested only in Chrome
 
 User Guide
 ---------------------
