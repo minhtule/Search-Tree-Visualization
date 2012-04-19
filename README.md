@@ -94,6 +94,11 @@ Versions
 + First release!
 
 
+License
+---------------------
+Explorer.js is published under the [MIT license](http://www.opensource.org/licenses/mit-license)
+or [GPL v3](http://opensource.org/licenses/GPL-3.0)
+
 Acknowledgement
 ---------------------
 The tree drawing algorithm used in Explorer.js is based on the [Tidier Drawings of Trees]
