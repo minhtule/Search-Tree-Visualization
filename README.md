@@ -35,11 +35,11 @@ User Guide
 Explorer.js provides 4 methods to invoke the Explorer (as part of FD). The first 3 use depth first search engine
 while the last one uses branch and bound search engine.
 
-+ **FD.Explore** (*problem*, *container*) : Initialize the explorer and display the orignal space
-+ **FD.ExploreOne** (*problem*, *container*) : Initialize the explorer and display the search tree until the first 
++ **FD.Explore** ( *problem*, *container* ) : Initialize the explorer and display the orignal space
++ **FD.ExploreOne** ( *problem*, *container* ) : Initialize the explorer and display the search tree until the first 
 solution is found
-+ **FD.ExploreAll** (*problem*, *container*) : Initialize the explorer and display the entire search tree
-+ **FD.ExploreBest** (*problem*, *container*) : Initialize the explore and display the entire search tree (using 
++ **FD.ExploreAll** ( *problem*, *container* ) : Initialize the explorer and display the entire search tree
++ **FD.ExploreBest** ( *problem*, *container* ) : Initialize the explore and display the entire search tree (using 
 branch and bound search)
 
 Explanation
@@ -68,12 +68,12 @@ many layers of canvas!) reside
 ### Context Menu & Hotkeys
 To explore the the search tree, you can use either the context menu (by right click) or the hotkeys.
 
-+ Display space (**d**) - Display the space's varibles and their domains
-+ Collapse (**space**) - Collapse a node
-+ Expand (**space**) - Expand a node
-+ Explore Next (**n**) - Explore the next space
-+ Explore One (**o**) - Explore the subtree until the next solution is found
-+ Explore All (**a**) - Explore the entire subtree
++ Display space ( **d** ) - Display the space's varibles and their domains
++ Collapse ( **space** ) - Collapse a node
++ Expand ( **space** ) - Expand a node
++ Explore Next ( **n** ) - Explore the next space
++ Explore One ( **o** ) - Explore the subtree until the next solution is found
++ Explore All ( **a** ) - Explore the entire subtree
 
 ---------------------
 ### The Search Tree
