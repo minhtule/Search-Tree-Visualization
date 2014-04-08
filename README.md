@@ -109,7 +109,7 @@ Edward M. Reingold and John S. Tilford.
 Authors
 ---------------------
 ### Authors
-+ [Minh Tu Le](https://github.com/minhtule) (<minhtule0412@gmail.com>)
++ [Minh Tu Le](https://github.com/minhtule) (<minhtule05@gmail.com>)
 + [Shubham Goyal](https://github.com/shubhamgoyal) (<shubhamjigoyal@gmail.com>)
 
 ### Supervisors
